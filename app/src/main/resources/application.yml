@@ -1,2 +1,19 @@
 server:
   port: ${SERVER_PORT:8080}
+
+spring:
+  main:
+    lazy-initialization: false
+  servlet:
+    multipart:
+      enabled: true
+      file-size-threshold: 2KB
+      max-file-size: 5MB
+      max-request-size: 10MB
+
+# Log configuration
+logging:
+  level:
+    io:
+      netty: ${NETTY_LOG_LEVEL:INFO}
+    reactor: ${REACTOR_LOG_LEVEL:INFO}
