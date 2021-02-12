@@ -1,0 +1,25 @@
+version: '3'
+services:
+  mongodb:
+    container_name: mongo
+    image: mongo:latest
+    hostname: mongodb
+    environment:
+      MONGO_INITDB_DATABASE: auth
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: pass
+    ports:
+      - "27017:27017"
+
+  webdav:
+    container_name: webdav
+    image: bytemark/webdav
+    restart: always
+    ports:
+      - "80:80"
+    environment:
+      AUTH_TYPE: Basic
+      USERNAME: guest
+      PASSWORD: guest
+    volumes:
+      - /srv/dav:/var/lib/dav
