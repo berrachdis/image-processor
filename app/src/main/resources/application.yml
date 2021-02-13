@@ -10,8 +10,20 @@ spring:
       file-size-threshold: 2KB
       max-file-size: 5MB
       max-request-size: 10MB
-
-# Log configuration
+#  data:
+#    mongodb:
+#      uri: mongodb://admin:pass@localhost/auth?authSource=admin
+############################################
+#         Mongo db configuration           #
+############################################
+  data:
+    mongodb:
+      port: ${MONGODB_PORT:27017}
+      host: ${MONGODB_HOST:localhost}
+      database: ${MONGODB_DATABASE:otd_qlf_dev_image_processor}
+############################################
+#           Log configuration              #
+############################################
 logging:
   level:
     io:

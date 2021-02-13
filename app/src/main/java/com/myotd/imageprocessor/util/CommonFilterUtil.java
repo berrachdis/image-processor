@@ -12,9 +12,9 @@ public class CommonFilterUtil {
     /**
      * Predicate used to validate UserID and ImageID headers
      */
-    public static final Predicate<ServerRequest.Headers> IS_VALID_HEADER_USER_ID_AND_IMAGE_ID = headers ->
+    public static final Predicate<ServerRequest.Headers> IS_VALID_HEADER_USER_ID_AND_IMAGE_NAME = headers ->
             !CollectionUtils.isEmpty(headers.header(CommonConstantUtil.HEADER_USER_ID))
-                    && !CollectionUtils.isEmpty(headers.header(CommonConstantUtil.HEADER_IMAGE_ID));
+                    && !CollectionUtils.isEmpty(headers.header(CommonConstantUtil.HEADER_IMAGE_NAME));
 
     /**
      * Predicate used to validate UserID and CollectionID headers

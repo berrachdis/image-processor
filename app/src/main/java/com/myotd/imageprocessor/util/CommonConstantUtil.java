@@ -15,4 +15,6 @@ public class CommonConstantUtil {
     public static final String HEADER_IMAGE_NAME = "imageName";
     public static final String HEADER_USER_ID = "userId";
     public static final String HEADER_COLLECTION_ID = "collectionId";
+
+    public static final String DIR_SEPARATOR = File.separator;
 }
