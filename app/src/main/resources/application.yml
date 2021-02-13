@@ -10,9 +10,7 @@ spring:
       file-size-threshold: 2KB
       max-file-size: 5MB
       max-request-size: 10MB
-#  data:
-#    mongodb:
-#      uri: mongodb://admin:pass@localhost/auth?authSource=admin
+
 ############################################
 #         Mongo db configuration           #
 ############################################
@@ -21,6 +19,7 @@ spring:
       port: ${MONGODB_PORT:27017}
       host: ${MONGODB_HOST:localhost}
       database: ${MONGODB_DATABASE:otd_qlf_dev_image_processor}
+
 ############################################
 #           Log configuration              #
 ############################################
@@ -29,3 +28,21 @@ logging:
     io:
       netty: ${NETTY_LOG_LEVEL:INFO}
     reactor: ${REACTOR_LOG_LEVEL:INFO}
+
+############################################
+#        Storage configuration             #
+############################################
+app:
+  storage-strategy: ${APP_STORAGE_STRATEGY:WEBDAV} #possible values : WEBDAV, AMAZON_S3
+  webdav:
+    enabled: ${WEBDAV_CLIENT_ENABLED:false}
+    client:
+      target-path: ${WEBDAV_CLIENT_TARGET_PATH:/dev-image-data}
+      timeout: ${WEBDAV_CLIENT_TIMEOUT:60000}
+    connections:
+      first:
+        host: ${WEBDAV_HOST:http://127.0.0.1/}
+        user: ${WEBDAV_USERNAME:guest}
+        password: ${WEBDAV_PASSWORD:guest}
+        enabled: ${WEBDAV_ENABLED:true}
+        proxy: ${WEBDAV_PROXY:}

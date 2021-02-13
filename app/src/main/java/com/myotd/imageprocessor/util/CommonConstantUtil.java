@@ -12,6 +12,7 @@ public class CommonConstantUtil {
      */
     public static final String HEADER_DIR_PATH_NAME = "dirPath";
     public static final String HEADER_IMAGE_ID = "imageId";
+    public static final String HEADER_FILENAME = "file";
     public static final String HEADER_IMAGE_NAME = "imageName";
     public static final String HEADER_USER_ID = "userId";
     public static final String HEADER_COLLECTION_ID = "collectionId";
